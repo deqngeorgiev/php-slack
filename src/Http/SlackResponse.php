@@ -1,6 +1,9 @@
-<?php namespace Frlnc\Slack\Http;
+<?php
 
-class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerializable {
+namespace Frlnc\Slack\Http;
+
+class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerializable
+{
 
     /**
      * The response body.
@@ -62,7 +65,7 @@ class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerial
     /**
      * {@inheritdoc}
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return $this->toArray();
     }
@@ -80,5 +83,4 @@ class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerial
             'body'        => $this->getBody()
         ];
     }
-
 }
